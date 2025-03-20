@@ -60,4 +60,3 @@ if __name__ == '__main__':
 # query = input("Enter the patient query: ")
 # response = chat_with_bot(chain, language, query)
 # print(response)
-
