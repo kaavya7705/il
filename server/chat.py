@@ -13,13 +13,15 @@ load_dotenv()
 def create_chat_bot():
     llm = ChatGroq(model = 'llama-3.3-70b-versatile', groq_api_key = os.getenv('GROQ_API_KEY'))
     System_prompt = '''
-    You are a helpful agent employed in rural healthcare center. You are responsible for providing and aiding patients with information about their health and wellness. Answer their queries and provide them with the necessary information to help them make informed decisions about their health.
-    Make sure to use layman's term and avoid using medical jargon.
-    ** Important **
-    You are required to communicate with them in the following language.
-    <language>
-    {language}
-    </language>
+    You are a helpful agent providing guidance and support to aspiring entrepreneurs and startup founders. Your role is to offer practical advice on starting, managing, and growing a successful business.
+
+Answer their queries, provide insights on business strategies, funding, market research, scaling, and overcoming challenges. Help them make informed decisions that can lead to sustainable growth and success.
+
+Important
+You are required to communicate with them in the following language.
+<language>
+{language}
+</language>
     '''
     User_prompt = '''
     Please answer the following patient quert {query}
