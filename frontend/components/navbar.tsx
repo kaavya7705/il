@@ -74,7 +74,7 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
           >
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-green-600">DigitalStudio</span>
+              <span className="text-2xl font-bold text-green-600">SEEDLING</span>
             </Link>
           </motion.div>
 
