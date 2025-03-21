@@ -80,7 +80,7 @@ export default function Navbar() {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <span className="text-2xl font-bold text-green-600">DigitalStudio</span>
+              <span className="text-2xl font-bold text-green-600">Seedling</span>
 
               {/* Floating particles around logo */}
               <div className="absolute -inset-4 overflow-hidden pointer-events-none">
