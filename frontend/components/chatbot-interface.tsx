@@ -79,11 +79,13 @@ export default function ChatbotInterface() {
 
   // Languages available
   const languages = [
-    { value: "en", label: "English", flag: "🇺🇸" },
-    { value: "hi", label: "Hindi", flag: "🇮🇳" },
-    { value: "es", label: "Spanish", flag: "🇪🇸" },
-    { value: "fr", label: "French", flag: "🇫🇷" },
-    { value: "de", label: "German", flag: "🇩🇪" },
+    { value: "en", label: "English", flag: "US" },
+    { value: "hi", label: "Hindi", flag: "IN" },
+    { value: "pb", label: "Punjabi", flag: "IN" },
+    { value: "es", label: "Spanish", flag: "ES" },
+    { value: "ta", label: "Tamil", flag: "IN" },
+    { value: "fr", label: "French", flag: "FR" },
+    { value: "ma", label: "Malyalam", flag: "IN" },
   ]
 
   // Auto-scroll to bottom of messages
