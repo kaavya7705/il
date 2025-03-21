@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Call the Python Flask API
-    const response = await fetch(`http://localhost:5000/api/schemes?industry=${encodeURIComponent(industry)}`, {
+    const response = await fetch(`http://localhost:5000/schemes?industry=${encodeURIComponent(industry)}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

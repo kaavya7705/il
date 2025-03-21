@@ -41,14 +41,15 @@ export default function Home() {
           >
             <motion.div variants={fadeIn("up", "tween", 0.2, 1)}>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white">
-                Create Digital Experiences That Matter
+              Empowering Startups, Connecting Futures
               </h1>
             </motion.div>
 
             <motion.div variants={fadeIn("up", "tween", 0.3, 1)}>
               <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto">
-                We build beautiful, functional websites and applications that help businesses grow and succeed in the
-                digital world.
+              We help startups thrive by linking them with expert mentors, unlocking government schemes, and providing a multilingual AI-driven chatbot for personalized guidance.
+
+             
               </p>
             </motion.div>
 
@@ -67,7 +68,7 @@ export default function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-6 text-white border-white hover:bg-white/10"
+                className="text-lg px-8 py-6 text-white border-white bg-green-500 hover:bg-white/10"
               >
                 <Link href="#features">Learn More</Link>
               </Button>
@@ -106,7 +107,7 @@ export default function Home() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Our Services</h2>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-              We offer a wide range of digital services to help your business thrive online.
+              We offer a wide services to help your business or startup.
             </p>
           </motion.div>
 
@@ -164,7 +165,7 @@ export default function Home() {
             >
               <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/placeholder.svg?height=1000&width=800"
+                  src="./WhatsApp Image 2025-03-21 at 01.13.18_f3d2e9fb.jpg"
                   alt="Our team working"
                   fill
                   className="object-cover"
@@ -181,12 +182,12 @@ export default function Home() {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Who We Are</h2>
               <p className="text-lg text-gray-700 mb-6">
-                We're a team of passionate designers, developers, and digital strategists dedicated to creating
-                exceptional digital experiences that help businesses thrive in the digital age.
+              We are a dedicated team of innovators—designers, developers, and strategists—committed to empowering startups with the right tools for success.
+
+
               </p>
               <p className="text-lg text-gray-700 mb-8">
-                With over 10 years of experience in the industry, we've helped hundreds of clients across various
-                sectors achieve their digital goals and grow their businesses online.
+              With expertise in technology and business growth, we bridge the gap between ambitious entrepreneurs and seasoned mentors, unlock government opportunities, and enhance startup journeys with AI-powered multilingual support.
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">

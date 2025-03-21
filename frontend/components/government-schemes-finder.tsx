@@ -11,23 +11,21 @@ import { Search, Loader2, Building, CreditCard, CheckCircle2, FileText } from "l
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 // Server action to search for government schemes
+import axios from "axios";
+
 async function searchGovernmentSchemes(industry: string) {
   try {
-    const response = await fetch(`/api/schemes?industry=${encodeURIComponent(industry)}`, {
-      method: "GET",
+    const response = await axios.get(`http://127.0.0.1:5000/api/schemes`, {
+      params: { industry },
       headers: {
         "Content-Type": "application/json",
       },
-    })
+    });
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch schemes")
-    }
-
-    return await response.json()
+    return response.data;
   } catch (error) {
-    console.error("Error fetching schemes:", error)
-    return { error: "Failed to fetch schemes. Please try again." }
+    console.error("Error fetching schemes:", error);
+    return { error: "Failed to fetch schemes. Please try again." };
   }
 }
 

@@ -1,6 +1,8 @@
 "use client"
 
-import { useEffect, useState, ReactElement} from "react"
+import type React from "react"
+
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import {
   Code,
@@ -12,14 +14,11 @@ import {
   Zap,
   Globe,
   Layers,
-  Search,
-  MessageSquare,
-  Award,
+  MessageCircle,
 } from "lucide-react"
 
-interface FloatingIcon {
-  id: number
-  icon: ReactElement
+type FloatingIcon = {
+  icon: React.ReactNode
   x: number
   y: number
   size: number
@@ -34,30 +33,27 @@ export default function FloatingIcons() {
     // Generate random icons
     const iconComponents = [
       <Code key="code" />,
-      <PaintBucket key="paintbucket" />,
-      <BarChart key="barchart" />,
-      <ShoppingCart key="shoppingcart" />,
-      <Smartphone key="smartphone" />,
+      <PaintBucket key="paint" />,
+      <BarChart key="chart" />,
+      <ShoppingCart key="cart" />,
+      <Smartphone key="phone" />,
       <Rocket key="rocket" />,
       <Zap key="zap" />,
       <Globe key="globe" />,
       <Layers key="layers" />,
-      <Search key="search" />,
-      <MessageSquare key="messagesquare" />,
-      <Award key="award" />,
+      <MessageCircle key="message" />,
     ]
 
     const newIcons: FloatingIcon[] = []
 
     for (let i = 0; i < 20; i++) {
       newIcons.push({
-        id: i,
         icon: iconComponents[Math.floor(Math.random() * iconComponents.length)],
         x: Math.random() * 100,
         y: Math.random() * 100,
-        size: Math.random() * 1.5 + 0.5, // Size between 0.5 and 2
-        duration: Math.random() * 20 + 10, // Duration between 10 and 30 seconds
-        delay: Math.random() * -20, // Random delay for more natural movement
+        size: Math.random() * 24 + 16,
+        duration: Math.random() * 20 + 10,
+        delay: Math.random() * 5,
       })
     }
 
@@ -66,14 +62,14 @@ export default function FloatingIcons() {
 
   return (
     <div className="absolute inset-0 overflow-hidden">
-      {icons.map((icon) => (
+      {icons.map((icon, index) => (
         <motion.div
-          key={icon.id}
-          className="absolute text-white/10"
+          key={index}
+          className="absolute text-white/20"
           style={{
             left: `${icon.x}%`,
             top: `${icon.y}%`,
-            fontSize: `${icon.size}rem`,
+            fontSize: icon.size,
           }}
           animate={{
             x: [0, Math.random() * 100 - 50, 0],
@@ -82,9 +78,9 @@ export default function FloatingIcons() {
           }}
           transition={{
             duration: icon.duration,
+            delay: icon.delay,
             repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
-            delay: icon.delay,
           }}
         >
           {icon.icon}

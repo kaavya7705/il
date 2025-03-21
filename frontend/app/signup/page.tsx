@@ -201,7 +201,7 @@ function SignupForm({ type }: SignupFormProps) {
               <Label htmlFor="description">Professional Description</Label>
               <textarea
                 id="description"
-                className="w-full min-h-[100px] p-2 border rounded-md"
+                className="w-full min-h-[100px] p-2 border rounded-md bg-white"
                 placeholder="Tell us about your professional background and skills..."
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -292,7 +292,7 @@ function SignupForm({ type }: SignupFormProps) {
                   <Label htmlFor="bio">Professional Bio</Label>
                   <textarea
                     id="bio"
-                    className="w-full min-h-[100px] p-2 border rounded-md"
+                    className="w-full min-h-[100px] p-2 border rounded-md bg-white"
                     placeholder="Tell us about your professional background..."
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}

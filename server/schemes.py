@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 import os
 import logging
 from functools import lru_cache
+from flask_cors import CORS
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -18,6 +19,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
 
 class AIAgentForGovSchemes:
     def __init__(self):
@@ -60,11 +62,27 @@ class AIAgentForGovSchemes:
     def search_gov_schemes(self, industry_specialization):
         """
         Search for government schemes related to the given industry specialization.
-        Using LRU cache to avoid repeated identical searches.
+        Using LRU cache to avoid repeated identical searches.Explain every scheme in detail like a professional.
         """
         logger.info(f"Searching for schemes related to: {industry_specialization}")
         try:
-            response = self.main_agent_executor.invoke({"input": f"What are the current government schemes for {industry_specialization} industry in India? Please provide details about eligibility, benefits, and how to apply."})
+            prompt = f"""Provide a comprehensive analysis of all current government schemes available for the {industry_specialization} industry in India. For each scheme, include:
+
+1. Scheme Name: Full official name of the scheme
+2. Implementing Ministry/Department: Which government body manages this scheme
+3. Objective: The primary goals and purpose of the scheme
+4. Key Benefits: Financial incentives, subsidies, tax benefits, or other advantages
+5. Eligibility Criteria: Detailed requirements for businesses/individuals to qualify
+6. Application Process: Step-by-step procedure to apply, including documentation requirements
+7. Timeline: Important dates, deadlines, or duration of the scheme
+8. Success Metrics: How the scheme has performed so far with statistics if available
+9. Contact Information: Official websites, helpline numbers, and email addresses
+10. Recent Updates: Any amendments or changes to the scheme in the past year
+
+Format each scheme clearly with headings and subheadings. Include both central and state-level schemes where applicable. Prioritize schemes that are currently active and accepting applications.
+"""
+
+            response = self.main_agent_executor.invoke({"input": prompt})
             return response['output']
         except Exception as e:
             logger.error(f"Error in search_gov_schemes: {e}")
